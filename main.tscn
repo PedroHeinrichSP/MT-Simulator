@@ -1,0 +1,165 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckwuw4ho41j81"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_rbq6o"]
+[ext_resource type="Script" path="res://Simulador/ui/main_ui.gd" id="2_ejkln"]
+[ext_resource type="Script" path="res://Simulador/simulador.gd" id="3_fev0t"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_rbq6o")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ejkln")
+
+[node name="Imutaveis" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect3" type="ColorRect" parent="UI/Imutaveis"]
+offset_left = 190.0
+offset_right = 364.0
+offset_bottom = 192.0
+color = Color(0.136826, 0.136826, 0.136826, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Imutaveis"]
+offset_left = 969.0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.136826, 0.136826, 0.136826, 1)
+
+[node name="ColorRect" type="ColorRect" parent="UI/Imutaveis"]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 175.0
+offset_bottom = 648.0
+color = Color(0.136826, 0.136826, 0.136826, 1)
+
+[node name="Pilha de instruções" type="Label" parent="UI/Imutaveis"]
+offset_left = 190.0
+offset_top = -1.0
+offset_right = 364.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 18
+text = "Pilha de instruções"
+horizontal_alignment = 1
+
+[node name="Arquitetura" type="Label" parent="UI/Imutaveis"]
+offset_left = 4.0
+offset_top = 123.0
+offset_right = 178.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 24
+text = "Arquitetura:"
+
+[node name="Metodo Multithread" type="Label" parent="UI/Imutaveis"]
+offset_left = 4.0
+offset_top = 50.0
+offset_right = 178.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 24
+text = "Método de MT:"
+
+[node name="Registradores" type="Label" parent="UI/Imutaveis"]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 160.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 24
+text = "Registradores:"
+
+[node name="StartButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 87.0
+offset_bottom = 47.0
+text = "Start"
+
+[node name="PauseButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 4.0
+offset_right = 176.0
+offset_bottom = 47.0
+text = "Pause"
+
+[node name="IPCLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 977.0
+offset_top = 512.0
+offset_right = 1036.0
+offset_bottom = 557.0
+theme_override_font_sizes/font_size = 32
+text = "IPC:"
+
+[node name="CycleLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 977.0
+offset_top = 557.0
+offset_right = 1076.0
+offset_bottom = 602.0
+theme_override_font_sizes/font_size = 32
+text = "Ciclos:"
+
+[node name="BubbleLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 977.0
+offset_top = 602.0
+offset_right = 1099.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 32
+text = "Bolhas: "
+
+[node name="RegistersValue" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 229.0
+offset_right = 181.0
+offset_bottom = 647.0
+text = "x0: 0
+x1: 0
+x2: 0
+x3: 0
+x4: 0
+x5: 0
+x6: 0
+x7: 0
+x8: 0
+x9: 0
+x10: 0
+x11: 0
+x12: 0
+x13: 0
+x14: 0
+x15: 0"
+
+[node name="MethodOption" type="OptionButton" parent="UI"]
+offset_left = 4.0
+offset_top = 82.0
+offset_right = 177.0
+offset_bottom = 125.0
+
+[node name="ArchitectureOption" type="CheckButton" parent="UI"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 157.0
+offset_right = 43.0
+offset_bottom = 188.0
+
+[node name="ArchitectureLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 160.0
+offset_right = 97.0
+offset_bottom = 183.0
+text = "Escalar"
+
+[node name="Simulador" type="Node" parent="."]
+script = ExtResource("3_fev0t")
